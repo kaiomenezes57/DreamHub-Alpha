@@ -1,3 +1,4 @@
+using DreamHub.Dream;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,7 +32,7 @@ namespace DreamHub.Player
         {
             Move();
             GravityBehaviour();
-            _characterController.Move(Time.deltaTime * _motion);
+            _characterController.Move(Time.unscaledDeltaTime * _motion);
 
 #if DEBUG
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -85,7 +86,7 @@ namespace DreamHub.Player
         public void GravityBehaviour()
         {
             if (_characterController.isGrounded) { return; }
-            _motion.y += GravityReference.Current * Time.deltaTime;
+            _motion.y += GravityReference.Current * Time.unscaledDeltaTime;
         }
 
         private bool SetIsWalking(float horizontal, float vertical)

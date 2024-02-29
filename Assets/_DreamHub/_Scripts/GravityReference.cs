@@ -1,3 +1,5 @@
+using DreamHub.Dream;
+
 namespace DreamHub
 {
     public static class GravityReference
@@ -16,7 +18,7 @@ namespace DreamHub
             return dreamMode switch
             {
                 DreamModeManager.DreamMode.Normal => _defaultValue,
-                DreamModeManager.DreamMode.Lucid => _defaultValue / 4f,
+                DreamModeManager.DreamMode.Lucid => _defaultValue / 3f,
                 _ => _defaultValue
             };
         }
