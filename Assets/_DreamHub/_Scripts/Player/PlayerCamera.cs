@@ -17,7 +17,7 @@ namespace DreamHub.Player
 
         private void Update()
         {
-            if (!GameManager.IsPlayerActive()) { return; }
+            if (!GameStateManager.IsPlayerActive()) { return; }
             float mouseX = PlayerInputs.Inputs.Actions.CameraMovement.ReadValue<Vector2>().x * _sensitivity;
             float mouseY = PlayerInputs.Inputs.Actions.CameraMovement.ReadValue<Vector2>().y * _sensitivity;
 

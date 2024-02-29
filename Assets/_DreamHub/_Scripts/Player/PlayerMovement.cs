@@ -33,28 +33,29 @@ namespace DreamHub.Player
             GravityBehaviour();
             _characterController.Move(Time.deltaTime * _motion);
 
-#if UNITY_EDITOR
+#if DEBUG
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                GravityReference.Set(DreamModeManager.DreamMode.Normal);
+                DreamModeManager.Set(DreamModeManager.DreamMode.Normal);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                GravityReference.Set(DreamModeManager.DreamMode.Lucid);
+                DreamModeManager.Set(DreamModeManager.DreamMode.Lucid);
             }
 #endif
         }
 
         private void Move()
         {
-            if (!GameManager.IsPlayerActive()) { OnMoving?.Invoke(false, false); return; }
+            if (!GameStateManager.IsPlayerActive()) { OnMoving?.Invoke(false, false); return; }
             if (!_characterController.enabled) { OnMoving?.Invoke(false, false); return; }
 
             float horizontal = PlayerInputs.Inputs.Actions.Horizontal.ReadValue<float>();
             float vertical = PlayerInputs.Inputs.Actions.Vertical.ReadValue<float>();
 
             OnMoving?.Invoke(SetIsWalking(horizontal, vertical), IsRunning);
+            
             float normalY = _motion.y;
             _motion = _currentPlayerSpeed * (transform.forward * vertical + transform.right * horizontal);
             _motion.y = normalY;

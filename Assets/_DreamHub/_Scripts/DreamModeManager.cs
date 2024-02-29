@@ -1,14 +1,20 @@
+using System;
+using UnityEngine;
+
 namespace DreamHub
 {
     public sealed class DreamModeManager : Singleton<DreamModeManager>
     {
         public enum DreamMode { Normal = 0, Lucid = 1, }
-        public DreamMode Current { get; private set; }
+        [field: SerializeField] public DreamMode Current { get; private set; }
+        public event Action<DreamMode> OnModeChanged;
 
-        public void Set(DreamMode dreamMode)
+        public static void Set(DreamMode dreamMode)
         {
-            Current = dreamMode;
+            Instance.Current = dreamMode;
             GravityReference.Set(dreamMode);
+
+            Instance.OnModeChanged?.Invoke(Instance.Current);
         }
     }
 }
