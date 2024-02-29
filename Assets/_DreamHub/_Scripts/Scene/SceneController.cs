@@ -17,8 +17,8 @@ namespace DreamHub.Scene
 
         public static void LoadScene(SceneData sceneData)
         {
-            SceneManager.LoadScene(sceneData.Name, LoadSceneMode.Single);
             Instance.Current = sceneData;
+            SceneManager.LoadScene(sceneData.Name, LoadSceneMode.Single);
         }
 
         private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode loadSceneMode)
