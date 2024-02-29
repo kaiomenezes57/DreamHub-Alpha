@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AcerolaJam
+namespace DreamHub
 {
     public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
