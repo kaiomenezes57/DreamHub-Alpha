@@ -16,7 +16,7 @@ namespace DreamHub
             return dreamMode switch
             {
                 DreamModeManager.DreamMode.Normal => _defaultValue,
-                DreamModeManager.DreamMode.Lucid => _defaultValue / 2f,
+                DreamModeManager.DreamMode.Lucid => _defaultValue / 4f,
                 _ => _defaultValue
             };
         }

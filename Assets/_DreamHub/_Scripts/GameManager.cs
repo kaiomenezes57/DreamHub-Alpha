@@ -9,5 +9,10 @@ namespace DreamHub
         {
             Instance.CurrentGameState = state;
         }
+
+        public static bool IsPlayerActive()
+        {
+            return true;
+        }
     }
 }
