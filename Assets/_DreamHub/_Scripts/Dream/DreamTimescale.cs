@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace DreamHub.Dream
 {
@@ -6,19 +7,27 @@ namespace DreamHub.Dream
     {
         private void Start() => DreamModeManager.Instance.OnModeChanged += Set;
 
-        private void Set(DreamModeManager.DreamMode obj)
+        private void Set(DreamModeManager.DreamMode dreamMode)
         {
-            Time.timeScale = GetTimescaleByMode(obj);
+            StopAllCoroutines();
+
+            bool mustFreezeTime = dreamMode == DreamModeManager.DreamMode.Lucid;
+            StartCoroutine(Animate(mustFreezeTime));
         }
 
-        private float GetTimescaleByMode(DreamModeManager.DreamMode mode)
+        private IEnumerator Animate(bool mustFreezeTime)
         {
-            return mode switch
+            float multiplier = mustFreezeTime ? -5f : 5f;
+            float target = mustFreezeTime ? 0f : 1f;
+            bool whileCondition = mustFreezeTime ? Time.timeScale > 0f : Time.timeScale < 1f;
+
+            while (whileCondition)
             {
-                DreamModeManager.DreamMode.Normal => 1f,
-                DreamModeManager.DreamMode.Lucid => 0f,
-                _ => 1f,
-            };
+                Time.timeScale = Mathf.Clamp(Time.timeScale + (multiplier * Time.unscaledDeltaTime), 0f, 1f);
+                yield return null;
+            }
+
+            Time.timeScale = target;
         }
     }
 }

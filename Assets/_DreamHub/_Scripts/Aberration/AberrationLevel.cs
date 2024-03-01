@@ -31,8 +31,6 @@ namespace DreamHub.Aberration
             {
                 _level = Mathf.Clamp(_level + (_multiplier * Time.unscaledDeltaTime), 0f, 100f);
                 OnUpdated?.Invoke(_level);
-                
-                Debug.Log($"Level: {_level:F1}");
                 yield return null;
             }
         }
