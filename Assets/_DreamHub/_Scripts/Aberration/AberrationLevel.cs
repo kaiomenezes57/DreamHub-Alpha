@@ -5,19 +5,23 @@ using UnityEngine;
 
 namespace DreamHub.Aberration
 {
-    public class AberrationLevel : MonoBehaviour
+    public sealed class AberrationLevel : MonoBehaviour
     {
         private float _level = 50f;
 
-        private const float _defaultMultiplier = 1f;
+        private const float _defaultMultiplier = 3f;
         private float _multiplier;
         
         public static event Action<float> OnUpdated;
         public static event Action OnFullyReached;
 
-        private void Start()
+        private void Awake()
         {
             DreamModeManager.Instance.OnModeChanged += SetMultiplierByMode;
+        }
+
+        private void Start()
+        {
             StartCoroutine(HandleLoop());
         }
 

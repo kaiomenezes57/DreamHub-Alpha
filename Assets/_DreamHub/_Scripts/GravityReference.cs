@@ -5,8 +5,8 @@ namespace DreamHub
     public static class GravityReference
     {
         public static float Current { get { return _current; } }
-        private static float _current = -9.81f;
-        private const float _defaultValue = -9.81f;
+        private static float _current;
+        private const float _defaultValue = -10f;
 
         public static void Set(DreamModeManager.DreamMode dreamMode)
         {
