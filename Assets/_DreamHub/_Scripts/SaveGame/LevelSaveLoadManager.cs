@@ -16,7 +16,7 @@ namespace DreamHub.SaveGame
 #if UNITY_EDITOR
         [UnityEditor.MenuItem("DreamHub/Save _F11")]
 #endif
-        public static void Save()
+        public static void IncrementAndSave()
         {
             BayatGames.SaveGameFree.SaveGame.Save(_key, ++Instance.CurrentLevelIndex);
             Instance.CurrentLevelIndex = Instance.Load();
