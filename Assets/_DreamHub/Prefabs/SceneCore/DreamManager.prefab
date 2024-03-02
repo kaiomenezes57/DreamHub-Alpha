@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2519583677543822170}
   - component: {fileID: 3398091847747954493}
   - component: {fileID: 226771033145213392}
+  - component: {fileID: 477691046874495063}
   m_Layer: 0
   m_Name: DreamManager
   m_TagString: Untagged
@@ -56,5 +57,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec61792d23984a645b00b0dd63cc53f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &477691046874495063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457427749049538294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8fca4dc5a6ad74aa782da1d4e4cbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

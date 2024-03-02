@@ -9,10 +9,10 @@ namespace DreamHub.Dream
         [field: SerializeField] public DreamMode Current { get; private set; }
         public event Action<DreamMode> OnModeChanged;
 
-        private void Start() => Set(DreamMode.Normal);
-
         public static void Set(DreamMode dreamMode)
         {
+            if (dreamMode == Instance.Current) { return; }
+
             Instance.Current = dreamMode;
             GravityReference.Set(dreamMode);
 

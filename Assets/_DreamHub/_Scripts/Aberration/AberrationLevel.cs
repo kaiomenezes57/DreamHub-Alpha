@@ -15,9 +15,13 @@ namespace DreamHub.Aberration
         public static event Action<float> OnUpdated;
         public static event Action OnFullyReached;
 
-        private void Awake() => DreamModeManager.Instance.OnModeChanged += SetMultiplierByMode;
-
-        private void Start() => StartCoroutine(HandleLoop());
+        private void Start()
+        {
+            DreamModeManager.Instance.OnModeChanged += SetMultiplierByMode;
+            SetMultiplierByMode(DreamModeManager.DreamMode.Normal);
+            
+            StartCoroutine(HandleLoop());
+        }
 
         private IEnumerator HandleLoop()
         {

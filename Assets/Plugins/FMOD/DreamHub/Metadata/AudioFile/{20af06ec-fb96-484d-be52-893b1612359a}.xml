@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{20af06ec-fb96-484d-be52-893b1612359a}">
+		<property name="assetPath">
+			<value>392091__gerainsan__hifreq-light-woosh.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.631583333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{44b930d4-8d22-409c-af98-9c160e54a9da}</destination>
+		</relationship>
+	</object>
+</objects>

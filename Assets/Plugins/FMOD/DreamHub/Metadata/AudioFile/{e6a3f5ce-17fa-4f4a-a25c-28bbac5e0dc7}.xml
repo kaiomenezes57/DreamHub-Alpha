@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e6a3f5ce-17fa-4f4a-a25c-28bbac5e0dc7}">
+		<property name="assetPath">
+			<value>34172__glaneur-de-sons__woosh_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.6797052154195011</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{44b930d4-8d22-409c-af98-9c160e54a9da}</destination>
+		</relationship>
+	</object>
+</objects>
