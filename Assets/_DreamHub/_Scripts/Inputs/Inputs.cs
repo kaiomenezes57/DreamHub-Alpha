@@ -80,6 +80,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""6df27e0d-9a78-4e05-9fdd-123b162b1e3f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -192,6 +201,17 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""SwitchDreamMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7256d7ab-6251-45fa-9c22-ae9f13247e70"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -206,6 +226,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_Actions_CameraMovement = m_Actions.FindAction("CameraMovement", throwIfNotFound: true);
         m_Actions_Jump = m_Actions.FindAction("Jump", throwIfNotFound: true);
         m_Actions_SwitchDreamMode = m_Actions.FindAction("SwitchDreamMode", throwIfNotFound: true);
+        m_Actions_Interact = m_Actions.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +294,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Actions_CameraMovement;
     private readonly InputAction m_Actions_Jump;
     private readonly InputAction m_Actions_SwitchDreamMode;
+    private readonly InputAction m_Actions_Interact;
     public struct ActionsActions
     {
         private @Inputs m_Wrapper;
@@ -283,6 +305,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @CameraMovement => m_Wrapper.m_Actions_CameraMovement;
         public InputAction @Jump => m_Wrapper.m_Actions_Jump;
         public InputAction @SwitchDreamMode => m_Wrapper.m_Actions_SwitchDreamMode;
+        public InputAction @Interact => m_Wrapper.m_Actions_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -310,6 +333,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @SwitchDreamMode.started += instance.OnSwitchDreamMode;
             @SwitchDreamMode.performed += instance.OnSwitchDreamMode;
             @SwitchDreamMode.canceled += instance.OnSwitchDreamMode;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IActionsActions instance)
@@ -332,6 +358,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @SwitchDreamMode.started -= instance.OnSwitchDreamMode;
             @SwitchDreamMode.performed -= instance.OnSwitchDreamMode;
             @SwitchDreamMode.canceled -= instance.OnSwitchDreamMode;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IActionsActions instance)
@@ -357,5 +386,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnCameraMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnSwitchDreamMode(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
