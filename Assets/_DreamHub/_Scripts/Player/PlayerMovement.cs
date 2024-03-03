@@ -33,18 +33,6 @@ namespace DreamHub.Player
             Move();
             GravityBehaviour();
             _characterController.Move(Time.unscaledDeltaTime * _motion);
-
-#if DEBUG
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                DreamModeManager.Set(DreamModeManager.DreamMode.Normal);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                DreamModeManager.Set(DreamModeManager.DreamMode.Lucid);
-            }
-#endif
         }
 
         private void Move()

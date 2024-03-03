@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/DreamHub/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638449423789860192
+  lastModified: 638449766920007001
   FileSizes:
   - Name: Desktop
     Value: 910
@@ -40,13 +40,13 @@ MonoBehaviour:
     Data4: -2140357160
   Banks:
   - {fileID: 2878217823517652319}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2000
+  Length: 1987
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   - {fileID: 175609279115302264}
   StringsBanks:
   - {fileID: -8938179887218582053}
-  cacheTime: 638449423791980551
+  cacheTime: 638449766920007001
   cacheVersion: 131616
 --- !u!114 &175609279115302264
 MonoBehaviour:
@@ -88,7 +88,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/DreamHub/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638449423789845186
+  lastModified: 638449766919996988
   FileSizes:
   - Name: Desktop
     Value: 1300
@@ -135,8 +135,8 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/DreamHub/Build/Desktop/2DSFX.bank
   Name: 2DSFX
   StudioPath: bank:/2DSFX
-  lastModified: 638449423791980551
+  lastModified: 638449766919971991
   FileSizes:
   - Name: Desktop
-    Value: 158016
+    Value: 158240
   Exists: 1
